@@ -7,7 +7,7 @@
 /out-tsc
 
 # dependencies
-/node_modules
+Atividade 02/node_modules
 
 # IDEs and editors
 /.idea

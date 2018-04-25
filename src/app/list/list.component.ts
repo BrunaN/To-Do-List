@@ -1,6 +1,6 @@
 import { ElementoService } from './../elemento.service';
 import { Elemento } from './../elemento.model';
-import { Input, Component, OnInit } from '@angular/core';
+import { Output, Input, Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -12,9 +12,14 @@ export class ListComponent implements OnInit {
   constructor( private elementoService: ElementoService) { }
 
   ngOnInit() {
+
+              if( this.elemento.status == true){
+                this.cor = 'green';
+              }
     }
   
   @Input() elemento: Elemento;
+
   cor:string;
 
   concluida(){
@@ -24,11 +29,16 @@ export class ListComponent implements OnInit {
     this.cor = 'green';
     this.elementoService.putStatus(this.elemento)
                         .subscribe(data => {
-                          console.log(data)},
-                          error => console.log(error));
+                                          this.cor = 'green';
+                                          console.log(data)
+                                        },
+                                  error => console.log(error));
   }
   
   deletar(){
-    this.elementoService.deleteElement(this.elemento.id);
+    this.elementoService.deleteElement(this.elemento.id)
+                        .subscribe(data => {
+                          console.log(data)},
+                          error => console.log(error));
   }
 }

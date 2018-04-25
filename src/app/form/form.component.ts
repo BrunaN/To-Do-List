@@ -19,24 +19,25 @@ export class FormComponent implements OnInit {
   list: Elemento [] = [];
 
   inputElemento: string = "";
-  id: string = "";
+  id: string;
   status: boolean = false;
 
   up_date(){
     this.list = [];
     this.elementoService.getElementos()
-                        .subscribe(data=>this.list = data),
+                        .subscribe(data=>{
+                                          this.list = data
+                                        }),
                                   (error=> console.log(error));
   }
 
-  adicionar(e){
-    e.preventDefault();
+  adicionar(){
     if(this.inputElemento == ""){
       return;
     }
-    this.elementoService.addElemento(new Elemento(this.inputElemento,this.id, this.status))
-                        .subscribe(data => {console.log(data)
-                                          this.inputElemento= "";}),
+    this.elementoService.addElemento(new Elemento(this.inputElemento, this.id, this.status))
+                        .subscribe(data => { this.up_date() 
+                                          this.inputElemento= ""}),
                                   (error => console.log(error));
     
   }

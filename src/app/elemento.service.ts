@@ -27,8 +27,7 @@ export class ElementoService{
     addElemento(elemento: Elemento){
         return this.http.post(this.url, elemento)
                         .map((response:Response)=> { response.json()
-                                                     this.list.push(elemento);
-                                                })
+                                                    })
                         .catch((error: Response)=> Observable.throw(error));
     }
 
@@ -37,6 +36,7 @@ export class ElementoService{
     }
 
     deleteElement(id){
+        console.log(id)
         return this.http.delete((this.url + "/" + id), id)
             .map((response: Response) => {
                 for ( let i = 0; i < this.list.length; i++ ){
