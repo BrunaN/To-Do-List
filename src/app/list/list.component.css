@@ -1,0 +1,23 @@
+button {
+    border: none;
+    background: none;
+    padding: 3px;
+}
+span{
+    font-size: 25px;
+}
+p{
+    font-size: 25px;
+}
+#concluida{
+    color: #bbb;
+}
+#concluida:hover{
+    color: green;
+}
+#apagar{
+    color: #bbb;
+}
+#apagar:hover{
+    color: red;
+}

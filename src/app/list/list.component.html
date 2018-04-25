@@ -1,0 +1,15 @@
+<div class="col-md-1 col-md-offset-2">
+  <button [style.color]="cor" id="concluida" (click)="concluida()">
+    <span class="glyphicon glyphicon-ok"></span>
+  </button>
+</div>
+<div class="col-md-6">
+    <p>
+        {{elemento.nome}}
+    </p>
+</div>
+<div class="col-md-1">
+  <button id="apagar" (click)="deletar()">
+    <span class="glyphicon glyphicon-remove"></span>
+  </button>
+</div>

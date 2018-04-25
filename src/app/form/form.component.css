@@ -1,0 +1,12 @@
+input, button{
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 22px;
+    user-select: none;
+    padding: 5px 15px;
+    background-color: none;
+}
+button{
+    padding: 5px;
+}

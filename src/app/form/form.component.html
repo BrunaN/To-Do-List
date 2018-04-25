@@ -1,0 +1,18 @@
+<div *ngFor="let e of list" class="row">
+  <div>
+      <app-list [elemento]="e"></app-list>
+  </div>
+</div>
+<div class="row">
+  <div>
+      <form action="" >
+          <div class="col-md-5 col-md-offset-3">
+              <input type="text" name = "elemento" id="" placeholder="Estudar Angular"
+              [(ngModel)] = "inputElemento">
+          </div>
+          <div class="col-md-1">
+              <button (click)="adicionar($event)">ok</button>
+          </div>
+      </form>
+  </div>
+</div>
